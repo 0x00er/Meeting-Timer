@@ -89,8 +89,8 @@ def add_meeting_info():
     if meeting_link is None:
         return
     
-    if os.path.exists('agenda.json'):
-        with open('agenda.json', 'r') as file:
+    if os.path.exists('meetings.json'):
+        with open('meetings.json', 'r') as file:
             data = json.load(file)
     else:
         data = []
@@ -102,7 +102,7 @@ def add_meeting_info():
         'link': meeting_link
     })
 
-    with open('agenda.json', 'w') as file:
+    with open('meetings.json', 'w') as file:
         json.dump(data, file, indent=4)
 
     update_agenda()
@@ -118,7 +118,7 @@ def update_agenda():
     now = datetime.datetime.now()
     realTime.set(now.strftime('%H:%M'))
 
-    with open('agenda.json', 'r') as json_file:
+    with open('meetings.json', 'r') as json_file:
         data = json.load(json_file)
 
     remaining_time = None  
