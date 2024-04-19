@@ -12,6 +12,8 @@ system. On a Debian/Ubuntu based system use:
 ```
 sudo dnf install git python3-tk
 
+pip install -r requirement.txt
+
 ```
 If you are using Windows or MacOS then you may wish to use the Python Anaconda installer to ensure you have all the 
 Python libraries needed.
